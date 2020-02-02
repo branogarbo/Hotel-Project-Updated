@@ -1,0 +1,131 @@
+body {
+  margin:0;
+  background:#153d56;
+  overflow:hidden;
+}
+
+#backimg {
+  width:100vw;
+  position:absolute;
+  bottom:0;
+  z-index:-1;
+}
+@keyframes panup {
+  0% {transform:translateY(0);}
+  100% {transform:translateY(50%);}
+}
+
+#planet {
+  width:100vw;
+}
+
+#stars {
+  width:200vw;
+  animation:starrotate 200s linear infinite both;
+  position:absolute;
+  left:-30%;
+  bottom:-23%;
+  z-index:-1;
+}
+
+@keyframes starrotate {
+  0% {transform:rotate(0);}
+  100% {transform:rotate(360deg);}
+}
+
+body > *:not(#backimg) {
+  animation:fadein 0.45s ease-out 0.5s both;
+}
+@keyframes fadein {
+  0% {
+    transform:translateY(80px);
+    opacity:0;
+  }
+  50% {opacity:0.4;}
+  100% {
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+* {
+  font-family:'Nunito',sans-serif;
+  color:#31393C;
+}
+
+#roomcont {
+  display:grid;
+  place-content:space-around;
+  height:100vh;
+  grid-template: auto / repeat(3,326.81px);
+}
+
+@font-face {
+  font-family:'Riviera';
+  src:url('Riviera.otf');
+}
+
+#logo {
+  display:flex;
+  align-items:center;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+#logo > h1 {
+  font-family:'Riviera';
+  font-size:3.5rem;
+  letter-spacing:5px;
+  color:#7161EF;
+  transform:skewX(-15deg);
+}
+
+#navbar {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+#navbar > h2 {
+  margin-left:10%;
+  color:#ffffff;
+}
+
+.room {
+  border-radius:7px;
+  padding:20px 30px;
+  height:217.833px;
+  background:#bed8ffc5;
+  transition:background 0.1s;
+}
+
+.room button {
+  background:#ffffff;
+  outline:none;
+  border-radius:3px;
+  padding:5px;
+  border:none;
+}
+
+.room input {
+  width:172px;
+  padding:5px;
+  border-radius:3px;
+  border:none;
+  outline:none;
+}
+
+.room img {
+  fill:#31393C;
+  width:25px;
+  height:25px;
+  float:right;
+  margin-top:19.92px;
+  animation:lockerr 0.4s infinite paused;
+}
+@keyframes lockerr {
+  15% {transform:rotate(20deg) scale(1.1)}
+  40% {transform:rotate(-20deg) scale(1.1)}
+  65% {transform:rotate(20deg) scale(1.1)}
+  90% {transform:scale(1) rotate(0)}
+}
