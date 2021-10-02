@@ -89,6 +89,12 @@ body > *:not(#backimg) {
 #navbar > h2 {
   margin-left:10%;
   color:#ffffff;
+  cursor:pointer;
+  transition:transform 0.2s;
+}
+
+#navbar > h2:hover {
+  transform:scale(1.05);
 }
 
 .room {
@@ -99,20 +105,12 @@ body > *:not(#backimg) {
   transition:background 0.1s;
 }
 
-.room button {
-  background:#ffffff;
-  outline:none;
-  border-radius:3px;
-  padding:5px;
-  border:none;
-}
-
 .room input {
-  width:172px;
   padding:5px;
   border-radius:3px;
-  border:none;
+  border:1px solid transparent;
   outline:none;
+  width:100%;
 }
 
 .room img {
@@ -121,8 +119,18 @@ body > *:not(#backimg) {
   height:25px;
   float:right;
   margin-top:19.92px;
+  cursor:pointer;
   animation:lockerr 0.4s infinite paused;
 }
+
+.room li {
+  cursor:pointer;
+  transition:color 0.2s;
+}
+.room li:hover {
+  color:#8f2121;
+}
+
 @keyframes lockerr {
   15% {transform:rotate(20deg) scale(1.1)}
   40% {transform:rotate(-20deg) scale(1.1)}

@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Guest Report</title>
+    <link rel="icon" type="image/ico" href="galacticinnicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:700&display=swap">
+    <style>
+      @font-face {
+        font-family:'Riviera';
+        src:url('Riviera.otf');
+      }
+      body {
+        overflow:hidden;
+        margin:50px;
+        background:#153d56;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+      }
+      h2 {
+        font-family:'Riviera';
+        font-size:3.5rem;
+        letter-spacing:5px;
+        color:#7161EF;
+        transform:skewX(-15deg);
+      }
+      #guestList * {
+        margin:20px;
+      }
+      #guestList {
+        font-size:1.5rem;
+        color:rgb(32, 37, 39);
+        font-family:'Nunito',sans-serif;
+        border-radius:7px;
+        padding:20px 70px;
+        background:#bed8ffc5;
+        max-height:60vh;
+        overflow-y:auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Guest Report</h2>
+
+    <ol id="guestList"></ol>
+
+    <script>
+      var guestlog = localStorage.getItem('guestreport').split(',');
+
+      if (guestlog[0] == '') {
+        document.getElementById('guestList').innerHTML = "No guests have checked in.";
+      }
+      else {
+        guestlog.forEach(guest => {
+          document.getElementById('guestList').insertAdjacentHTML('beforeend',`<li>${guest}</li>`);
+        });
+      }
+
+    </script>
+  </body>
+</html>
